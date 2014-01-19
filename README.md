@@ -8,7 +8,9 @@ IFrame Session is a gem that allows problematic web browsers (Internet Explorer 
 
 Add this line to your application's Gemfile:
 
-    gem 'iframe_session', git: 'git://github.com/LiveTyping/iframe_session.git'
+```ruby
+gem 'iframe_session', git: 'git://github.com/LiveTyping/iframe_session.git'
+```
 
 And then execute:
 
@@ -23,13 +25,13 @@ Add call of `iframe_session_fix(redirect_path, options = {})` method on the cont
 
 Let's pretend your parent iframe path is `http://example.com/` and your `routes.rb` looks like:
 
-```
+```ruby
 ...
 root 'home#index'
 ...
 ```
 In this case your `home_controller.rb `should look like:
-```
+```ruby
 class HomeController < ApplicationController
   iframe_session_fix 'http://example.com/', only: :index
 
