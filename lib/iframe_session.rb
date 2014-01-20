@@ -25,7 +25,7 @@ class ActionController::Base
         session[:cookie_fixed] = true
         redirect_to params[:return_to]
       else
-        render "<script>top.window.location='?cookie_fix=true&return_to=#{redirect_path}';</script>"
+        render text: "<script>top.window.location='?cookie_fix=true&return_to=#{redirect_path}';</script>"
       end
     end
   end
